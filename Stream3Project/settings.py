@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'accountsApp',
     'django_forms_bootstrap',
     'blogApp',
+    'django.contrib.sites',
+    'disqus',
+
 ]
 
 MIDDLEWARE = [
@@ -134,3 +137,10 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'accountsApp.backends.EmailAuth',
 )
+
+DISQUS_WEBSITE_SHORTNAME='yourshortname'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+SITE_ID = 1
