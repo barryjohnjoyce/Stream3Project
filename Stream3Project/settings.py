@@ -128,7 +128,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static")
+    os.path.join(BASE_DIR, "static"),
 )
 
 AUTH_USER_MODEL = 'accountsApp.User'
@@ -138,9 +138,12 @@ AUTHENTICATION_BACKENDS = (
     'accountsApp.backends.EmailAuth',
 )
 
-DISQUS_WEBSITE_SHORTNAME='yourshortname'
+DISQUS_WEBSITE_SHORTNAME='Stream3Project'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 SITE_ID = 1
+
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'publishable key')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'secret key')

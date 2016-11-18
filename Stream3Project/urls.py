@@ -29,5 +29,9 @@ urlpatterns = [
     url(r'^logout/$', accountsApp_views.logout, name='logout'),
     url(r'', include('blogApp.urls')),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
+    url(r'^cancel_subscription/$', accountsApp_views.cancel_subscription, name='cancel_subscription'),
+    url(r'^cancellation/$', accountsApp_views.cancellation, name='cancellation'),
+
+
 
 ]
