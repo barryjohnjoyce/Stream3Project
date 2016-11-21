@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'emoticons',
     'debug_toolbar',
     'threadsApp',
+    'pollsApp',
+    'django_gravatar',
+
 
 ]
 
@@ -155,3 +158,6 @@ STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'publishable key')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'secret key')
 
 TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", 'js', 'tinymce', 'tinymce.min.js')
+
+# GRAVATAR_DEFAULT_URL = "http://www.example.com/mydefaultavatar.jpg"
+GRAVATAR_DEFAULT_URL = "http://placehold.it/100"
