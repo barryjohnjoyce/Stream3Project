@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+
+
     <h2>You have cancelled your subscription!</h2>
     <p>You have {{ user.subscription_end|timeuntil}} left on your subscription</p>
     <p>You are logged in as {{ user.email }} </p>

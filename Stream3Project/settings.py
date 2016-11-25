@@ -78,6 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -154,10 +155,13 @@ MEDIA_URL = '/media/'
 
 SITE_ID = 1
 
-STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'publishable key')
-STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'secret key')
+# STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'publishable key')
+# STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'secret key')
+
+STRIPE_PUBLISHABLE = 'pk_test_Eq9wA92ip38EmnuOB3h7XutS'
+STRIPE_SECRET = 'sk_test_w1W6nEGTE9rBKuAdNQbMQ3RQ'
 
 TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", 'js', 'tinymce', 'tinymce.min.js')
 
-# GRAVATAR_DEFAULT_URL = "http://www.example.com/mydefaultavatar.jpg"
+
 GRAVATAR_DEFAULT_URL = "http://placehold.it/100"

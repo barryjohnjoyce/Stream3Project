@@ -1,6 +1,6 @@
 
 from django.shortcuts import render, get_object_or_404
-from threadsApp.models import Subject, Thread, Post
+from threadsApp.models import ThreadSubject, Thread, ThreadComment
 from django.shortcuts import redirect
 from django.contrib import messages, auth
 from django.contrib.auth.decorators import login_required
@@ -11,16 +11,16 @@ from django.forms import formset_factory
 from pollsApp.forms import PollSubjectForm, PollForm
 
 def forum(request):
-    return render(request, 'forum/forum.html', {'subjects': Subject.objects.all()})
+    return render(request, 'forum/forum.html', {'subjects': ThreadSubject.objects.all()})
 
 
 def threads(request, subject_id):
-    subject = get_object_or_404(Subject, pk=subject_id)
+    subject = get_object_or_404(ThreadSubject, pk=subject_id)
     return render(request, 'forum/list_of_threads.html', {'subject': subject})
 
 @login_required
 def new_thread(request, subject_id):
-    subject = get_object_or_404(Subject, pk=subject_id)
+    subject = get_object_or_404(ThreadSubject, pk=subject_id)
     poll_subject_formset = formset_factory(PollSubjectForm, extra=4)
     if request.method == "POST":
         thread_form = ThreadForm(request.POST)

@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Subject, Thread, Post
+from .models import ThreadSubject, Thread, ThreadComment
 
-admin.site.register(Subject)
+admin.site.register(ThreadSubject)
 admin.site.register(Thread)
-admin.site.register(Post)
+admin.site.register(ThreadComment)

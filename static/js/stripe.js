@@ -7,7 +7,6 @@ $(function() {
         expYear:  $("#id_expiry_year").val(),
         cvc:      $("#id_cvv").val()
       };
-
       $("#validate_card_btn").attr("disabled", true);
        Stripe.createToken(card, function(status, response) {
         if (status === 200) {

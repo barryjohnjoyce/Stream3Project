@@ -41,7 +41,6 @@ def register(request):
         else:
             messages.error(request, "We were unable to take a payment with that card!")
     else:
-        today = datetime.date.today()
         form = UserRegistrationForm()
 
     args = {'form': form, 'publishable': settings.STRIPE_PUBLISHABLE}
@@ -65,7 +64,8 @@ def login(request):
                     form.add_error(None, "Your subscription has expired")
 
             else:
-                form.add_error(None, "Your email or password was not recognised")
+                form.add_error(None, "Your email or password was NOT recognised. Please check your details or register "
+                                     "at the above link if you are not already an authorised user")
 
     else:
         form = UserLoginForm()
